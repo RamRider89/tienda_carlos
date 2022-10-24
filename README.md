@@ -17,17 +17,20 @@
 
 # INSTALACION DE LA APLICACION
 #
-# Editar -> config.php -> Para conectarse a MySQL
+# Editar(archivo) -> config.php -> Para conectarse a MySQL
 - Es necesario configurar el archivo 'src/app/api/config.php'
 - En este archivo encontrara los parametros para conectarse a MySQL
 #
-# Editar -> productos.service.ts -> Ruta absoluta a la API php
+# Editar(archivo) -> productos.service.ts -> Ruta absoluta a la API php
 - Es necesario editar el archivo 'src/app/productos.service.ts' 
 - la variable URL indica la url absoluta a la carpeta API ('src/app/api/')
 - Indicar la URL absoluta para poder realizar las peticiones POST | GET
 
 # API REST
 - La configuracion se encuenta en 'src/app/api'
-- 
+
+# BASE DE DATOS MYSQL
+- El archivo SQL se encuentra en 'src/assets/tienda_carlos.sql'
+- Es necesario añadrilo al servidor mysql para poder utilizar la aplicacion
 
 
