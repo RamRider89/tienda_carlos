@@ -1,0 +1,89 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  table {
+    width: 100%;
+  }
+  
+
+  .demo-table {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 25px;
+  }
+  
+  .mat-row .mat-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+  }
+  
+  .mat-row:hover .mat-cell {
+    border-color: rgb(199, 199, 199);
+    background-color: rgb(245, 245, 245);
+  }
+  
+  .demo-row-is-clicked {
+    font-weight: bold;
+  }
+
+  .mat-accordion{
+    margin: 1em auto;
+    position: relative;
+  }
+
+  .form-field {
+  }
+  
+  form{
+    margin: 1em auto;
+    position: relative;
+    overflow: hidden;
+  }
+  form h1{
+
+  }
+  form input[type=text]::placeholder{
+
+  }
+  form .data{
+      margin-top: 1em;
+  }
+  form .data li{
+
+   padding: 1em;
+   margin: 1em auto;
+
+  }
+  form .data li i{
+      float: right;
+      cursor: pointer;
+  }
+  form .input-group-text{
+      border-radius: 50%;
+      width: 5em;
+      height: 5em;
+      padding: 1em 23px;
+      position: absolute;
+      right: 13px;
+      top: 68px;
+      cursor: pointer;
+  }
+  form .input-group-text i{
+      font-size: 2em;
+  }
+  form .form-control{
+    height: 3em;
+    font-family: "Raleway";
+  }
+  form .form-control:focus{
+    box-shadow: 0;
+  }
+  
+  .mat-form-field-wrapper {
+    padding-bottom: 1.34375em;
+    margin: 1em;
+}

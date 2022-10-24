@@ -1,0 +1,72 @@
+<div>
+    <h2 mat-dialog-title>Editar Producto - Codigo #{{data.codigo}}</h2>
+    <mat-divider></mat-divider>
+    <br>
+    <div mat-dialog-content>
+        <div style="display: flex;flex-direction: column; max-width: 100%;">
+
+            
+
+            <mat-form-field class="" appearance="fill">
+                <mat-label>Nombre</mat-label>
+                <input matInput type="text" [(ngModel)]="data.nombre">
+                <mat-icon matSuffix>spa</mat-icon>
+              </mat-form-field>
+
+
+            <mat-form-field appearance="fill">
+                <mat-label>Categoria</mat-label>
+                <mat-select [(ngModel)]="data.cat_id">
+                    <mat-option [value]="item.id" *ngFor="let item of listaCategorias">{{item.descripcion}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <div appearance="fill">
+                <!-- LISTA DE DETALLES -->
+                <table mat-table [dataSource]="listaDetalles" class="mat-elevation-z8">
+                    
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="titulo_detalle">
+                        <th mat-header-cell *matHeaderCellDef> Detalle </th>
+                        <td mat-cell *matCellDef="let element"> {{element.titulo_detalle}} </td>
+                    </ng-container>
+                    
+                    <!-- Symbol Column -->
+                    <ng-container matColumnDef="descripcion">
+                        <th mat-header-cell *matHeaderCellDef> Descripcion </th>
+                        <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
+                    </ng-container>
+
+                    <!-- Eliminar Column -->
+                    <ng-container matColumnDef="eliminar">
+                        <th mat-header-cell *matHeaderCellDef>Eliminar</th>
+                        <td mat-cell *matCellDef="let element">
+                        <button mat-icon-button color="" aria-label="Eliminar"
+                        (click)="eliminarDetalle(element.id)">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                        </td>
+                    </ng-container>
+                    
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+            </div>
+            <br>
+            <mat-divider></mat-divider>
+              
+        </div>
+    </div>
+
+
+    <div mat-dialog-actions>
+        <button mat-stroked-button color="" (click)="cancelar()">Cancelar</button>
+        <button mat-stroked-button color="primary"
+        (click)="nuevoDetalle(data.codigo)">Nuevo Detalle
+        <mat-icon>plus_one</mat-icon>
+        </button>
+
+        <button mat-stroked-button color="warn" [mat-dialog-close]="data" (click)="editarProducto()" cdkFocusInitial>Confirmar
+            <mat-icon>save</mat-icon></button>
+        
+    </div>
